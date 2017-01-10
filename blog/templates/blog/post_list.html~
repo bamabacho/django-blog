@@ -1,0 +1,27 @@
+{% load staticfiles %}
+
+<html>
+
+	<head>
+		<title>My Coding Year</title>
+		<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+	</head>
+
+	<body>
+		<div id='page-wrapper'>
+			<div id='header'>
+				<h1><a href=''>My Coding Year</a></h1>
+			</div>
+
+	{% for post in posts %}
+			<div class='post-tile>
+				<h2 class='post-title><a href=''>{{ post.title }}</a></h2>
+				<h3 class='post-date'>Published on: {{post.published_date }}</h3>
+				<p class='post-text'>{{ post.text|linebreaksbr }}</p>
+			</div>
+	{% endfor %}
+
+	</div><!--page-wrapper-->
+	</body>
+
+</html>
